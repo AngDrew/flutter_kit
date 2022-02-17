@@ -1,0 +1,6 @@
+{
+  "appTitle": "FKit",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

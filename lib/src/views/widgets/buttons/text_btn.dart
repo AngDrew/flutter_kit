@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../logics/utils/custom_border_radius.dart';
 import '../../resources/r.dart';
+import '../custom_indicator.dart';
 
 class RoundedTextButton extends StatelessWidget {
   const RoundedTextButton({
@@ -16,6 +17,7 @@ class RoundedTextButton extends StatelessWidget {
     this.isIconOnRight = true,
     this.elevation = 0,
     this.padding,
+    this.isLoading = false,
   }) : super(key: key);
 
   final String text;
@@ -27,6 +29,7 @@ class RoundedTextButton extends StatelessWidget {
   final Color? splashColor;
   final double elevation;
   final EdgeInsets? padding;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +42,12 @@ class RoundedTextButton extends StatelessWidget {
       ),
     );
 
+    const Widget loadingWidget = SizedBox(
+      height: 32,
+      width: 32,
+      child: CustomIndicator(),
+    );
+
     final Widget iconWgt = Icon(
       icon,
       size: 16.sp,
@@ -46,20 +55,7 @@ class RoundedTextButton extends StatelessWidget {
     );
 
     return TextButton(
-      child: Padding(
-        padding: padding ?? R.spaces.littleSpaceAround,
-        child: icon != null
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  if (icon != null && !isIconOnRight) iconWgt,
-                  child,
-                  if (icon != null && isIconOnRight) iconWgt,
-                ],
-              )
-            : child,
-      ),
-      onPressed: onPressed,
+      onPressed: isLoading ? null : onPressed,
       style: TextButton.styleFrom(
         backgroundColor: backgroundColor,
         elevation: elevation,
@@ -68,7 +64,27 @@ class RoundedTextButton extends StatelessWidget {
         ),
       ).copyWith(
         overlayColor: MaterialStateProperty.all<Color>(
-          splashColor ?? theme.colorScheme.primaryVariant,
+          splashColor ?? theme.colorScheme.primaryContainer,
+        ),
+      ),
+      child: Padding(
+        padding: padding ?? R.spaces.littleSpaceAround,
+        child: Builder(
+          builder: (_) {
+            if (isLoading) {
+              return loadingWidget;
+            } else if (icon != null) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  if (icon != null && !isIconOnRight) iconWgt,
+                  child,
+                  if (icon != null && isIconOnRight) iconWgt,
+                ],
+              );
+            }
+            return child;
+          },
         ),
       ),
     );

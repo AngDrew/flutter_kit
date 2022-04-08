@@ -108,6 +108,13 @@ String asString(Map<String, dynamic>? json,
   return defaultValue;
 }
 
+/// convert map value as String in a safest way
+DateTime? asDateTime(Map<String, dynamic>? json, {String? key}) {
+  final String rawDate = asString(json, key: key);
+
+  return DateTime.tryParse(rawDate);
+}
+
 /// convert map value as map in a safest way
 Map<String, dynamic> asMap(Map<String, dynamic>? json,
     {String? key, Map<String, dynamic>? defaultValue}) {
@@ -139,7 +146,7 @@ List<dynamic> asList(Map<String, dynamic>? json,
   } else {
     value = json[key];
   }
-  
+
   if (value == null) {
     return defaultValue ?? <dynamic>[];
   } else if (value is List<dynamic>) {

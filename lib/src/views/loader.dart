@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
@@ -19,8 +21,7 @@ class Loader<T extends BaseViewModel> extends StatefulWidget {
   _Loader<T> createState() => _Loader<T>();
 }
 
-class _Loader<T extends BaseViewModel>
-    extends State<Loader<T>> {
+class _Loader<T extends BaseViewModel> extends State<Loader<T>> {
   late final T vm = context.read<T>();
 
   @override
@@ -34,7 +35,7 @@ class _Loader<T extends BaseViewModel>
         await widget.onReady?.call(vm);
         end = DateTime.now();
 
-        print(
+        log(
           '[$T] took ${end.difference(start).inMilliseconds}ms '
           'for second build include init',
         );

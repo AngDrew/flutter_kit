@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MySpaces {
   const MySpaces();
 
   double get _none => 0;
-  double get _tiny => 4.sp;
-  double get _little => 8.sp;
-  double get _better => 16.sp;
-  double get _huge => 32.sp;
-  double get _giant => 64.sp;
+  double get _tiny => 4;
+  double get _little => 8;
+  double get _better => 16;
+  double get _huge => 32;
+  double get _giant => 64;
 
   /// all 0
   EdgeInsets get noSpaceAround => EdgeInsets.all(_none);

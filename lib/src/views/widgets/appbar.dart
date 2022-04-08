@@ -12,6 +12,7 @@ enum LeadingType {
 
 class MyAppBar extends StatelessWidget with PreferredSizeWidget {
   const MyAppBar({
+    Key? key,
     this.actions,
     this.title = '',
     this.titleWidget,
@@ -20,7 +21,7 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
     this.color,
     this.customLeading,
     this.tab,
-  });
+  }) : super(key: key);
 
   /// control the widget action on right side of the appbar
   final List<Widget>? actions;
@@ -87,8 +88,8 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
           ? titleWidget ??
               Text(
                 title,
-                style: R.styles.titleFont
-                    .copyWith(color: theme.colorScheme.onBackground),
+                // style: R.styles.titleFont
+                //     .copyWith(color: theme.colorScheme.onBackground),
               )
           : null,
       centerTitle: true,

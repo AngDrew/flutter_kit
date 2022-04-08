@@ -7,4 +7,5 @@ String? validateString(String? value, {String? fieldName}) {
     }
     return 'required';
   }
+  return null;
 }

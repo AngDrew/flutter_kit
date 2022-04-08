@@ -37,9 +37,9 @@ class RoundedTextButton extends StatelessWidget {
 
     final Widget child = Text(
       text,
-      style: R.styles.titleFont.copyWith(
-        color: color ?? theme.colorScheme.primary,
-      ),
+      // style: R.styles.titleFont.copyWith(
+      //   color: color ?? theme.colorScheme.primary,
+      // ),
     );
 
     const Widget loadingWidget = SizedBox(

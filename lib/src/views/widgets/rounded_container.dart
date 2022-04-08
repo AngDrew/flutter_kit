@@ -5,13 +5,14 @@ import '../resources/r.dart';
 
 class RoundedContainer extends StatelessWidget {
   const RoundedContainer({
+    Key? key,
     required this.child,
     this.bgColor,
     this.outterPadding,
     this.innerPadding,
     this.radius = 16,
     this.maxHeight,
-  });
+  }) : super(key: key);
   final Widget child;
   final Color? bgColor;
   final EdgeInsetsGeometry? outterPadding;

@@ -40,11 +40,11 @@ class IconText extends StatelessWidget {
               text,
               style: style?.copyWith(
                     fontWeight: isBold ? FontWeight.bold : null,
-                  ) ??
-                  R.styles.normalFont.copyWith(
-                    color: color ?? theme.colorScheme.onSurface,
-                    fontWeight: isBold ? FontWeight.bold : null,
-                  ),
+                  ) 
+                  // ?? R.styles.normalFont.copyWith(
+                  //   color: color ?? theme.colorScheme.onSurface,
+                  //   fontWeight: isBold ? FontWeight.bold : null,
+                  // ),
             ),
           ),
         if (!isExpanded)
@@ -52,11 +52,11 @@ class IconText extends StatelessWidget {
             text,
             style: style?.copyWith(
                   fontWeight: isBold ? FontWeight.bold : null,
-                ) ??
-                R.styles.normalFont.copyWith(
-                  color: color ?? theme.colorScheme.onSurface,
-                  fontWeight: isBold ? FontWeight.bold : null,
-                ),
+                ) 
+                // ?? R.styles.normalFont.copyWith(
+                //   color: color ?? theme.colorScheme.onSurface,
+                //   fontWeight: isBold ? FontWeight.bold : null,
+                // ),
           )
       ],
     );

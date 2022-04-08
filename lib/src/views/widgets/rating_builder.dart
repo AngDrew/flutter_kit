@@ -25,10 +25,10 @@ class RatingBuilder extends StatelessWidget {
         R.spaces.tinySpaceWidget,
         Text(
           '5.0',
-          style: R.styles.normalFont.copyWith(
-            color: theme.colorScheme.onBackground,
-            fontWeight: FontWeight.bold,
-          ),
+          // style: R.styles.normalFont.copyWith(
+          //   color: theme.colorScheme.onBackground,
+          //   fontWeight: FontWeight.bold,
+          // ),
         ),
       ],
     );

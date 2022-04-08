@@ -37,9 +37,9 @@ class RoundedElevatedButton extends StatelessWidget {
 
     final Widget child = Text(
       text,
-      style: R.styles.titleFont.copyWith(
-        color: color ?? theme.colorScheme.onPrimary,
-      ),
+      // style: R.styles.titleFont.copyWith(
+      //   color: color ?? theme.colorScheme.onPrimary,
+      // ),
     );
 
     const Widget loadingWidget = SizedBox(

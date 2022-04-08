@@ -6,6 +6,7 @@ import '../resources/r.dart';
 class MyTextField extends StatefulWidget {
   const MyTextField(
     this.label, {
+    Key? key,
     this.onChange,
     this.iconData,
     this.isPassword = false,
@@ -22,7 +23,7 @@ class MyTextField extends StatefulWidget {
     this.showClearIcon = false,
     this.onClear,
     this.errorMsg,
-  });
+  }) : super(key: key);
 
   final String label;
   final IconData? iconData;
@@ -105,9 +106,9 @@ class _MyTextFieldState extends State<MyTextField> {
                       child: Center(
                         child: Text(
                           widget.suffixText!,
-                          style: R.styles.normalFont.copyWith(
-                            color: greyColor,
-                          ),
+                          // style: R.styles.normalFont.copyWith(
+                          //   color: greyColor,
+                          // ),
                         ),
                       ),
                     )
@@ -128,15 +129,15 @@ class _MyTextFieldState extends State<MyTextField> {
                         )
                       : null,
           labelText: widget.label,
-          labelStyle: R.styles.normalFont.copyWith(
-            // fontWeight: FontWeight.bold,
-            color: theme.colorScheme.onBackground,
-          ),
+          // labelStyle: R.styles.normalFont.copyWith(
+          //   // fontWeight: FontWeight.bold,
+          //   color: theme.colorScheme.onBackground,
+          // ),
           errorText: widget.errorMsg,
-          errorStyle: R.styles.normalFont.copyWith(
-            fontWeight: FontWeight.normal,
-            color: theme.colorScheme.error,
-          ),
+          // errorStyle: R.styles.normalFont.copyWith(
+          //   fontWeight: FontWeight.normal,
+          //   color: theme.colorScheme.error,
+          // ),
           isDense: true,
           // contentPadding: widget.isOutlined
           //     ? null
@@ -148,14 +149,14 @@ class _MyTextFieldState extends State<MyTextField> {
           //       ),
         ),
         cursorColor: theme.textSelectionTheme.cursorColor,
-        style: widget.isBoldStyle != null
-            ? R.styles.normalFont.copyWith(
-                fontWeight: FontWeight.bold,
-                color: theme.colorScheme.onBackground,
-              )
-            : R.styles.normalFont.copyWith(
-                color: theme.colorScheme.onBackground,
-              ),
+        // style: widget.isBoldStyle != null
+        //     ? R.styles.normalFont.copyWith(
+        //         fontWeight: FontWeight.bold,
+        //         color: theme.colorScheme.onBackground,
+        //       )
+        //     : R.styles.normalFont.copyWith(
+        //         color: theme.colorScheme.onBackground,
+        //       ),
         obscureText: isObscured,
         keyboardType: widget.isPassword
             ? TextInputType.visiblePassword

@@ -21,15 +21,15 @@ class MyAlertDialog extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.surface,
       title: Text(
         title ?? 'Something went wrong',
-        style: R.styles.titleFont.copyWith(
-          color: Theme.of(context).colorScheme.onSurface,
-        ),
+        // style: R.styles.titleFont.copyWith(
+        //   color: Theme.of(context).colorScheme.onSurface,
+        // ),
       ),
       content: Text(
         body,
-        style: R.styles.normalFont.copyWith(
-          color: Theme.of(context).colorScheme.onSurface,
-        ),
+        // style: R.styles.normalFont.copyWith(
+        //   color: Theme.of(context).colorScheme.onSurface,
+        // ),
       ),
       actions: <Widget>[
         RoundedElevatedButton(

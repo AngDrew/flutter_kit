@@ -1,9 +1,7 @@
 import 'package:flutter/services.dart';
 
-import 'dialog_helper.dart';
-
 void copyToClipboard(String value) {
-  showInfoSnackBar('Copied to clipboard');
+  // TODO(Anyone): snackbar to show successfully copied the `value`
 
   Clipboard.setData(
     ClipboardData(

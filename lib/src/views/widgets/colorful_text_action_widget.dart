@@ -27,15 +27,15 @@ class ColorfulTextActionWidget extends StatelessWidget {
           children: <TextSpan>[
             TextSpan(
               text: firstPhrase,
-              style: R.styles.normalFont
-                  .copyWith(color: theme.colorScheme.onBackground),
+              // style: R.styles.normalFont
+              //     .copyWith(color: theme.colorScheme.onBackground),
             ),
             TextSpan(
               text: coloredPhrase,
-              style: R.styles.normalFont.copyWith(
-                color: color ?? theme.colorScheme.error,
-                fontWeight: FontWeight.bold,
-              ),
+              // style: R.styles.normalFont.copyWith(
+              //   color: color ?? theme.colorScheme.error,
+              //   fontWeight: FontWeight.bold,
+              // ),
             ),
           ],
         ),

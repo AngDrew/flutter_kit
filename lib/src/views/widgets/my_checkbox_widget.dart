@@ -32,9 +32,9 @@ class MyCheckboxWidget extends StatelessWidget {
       onChanged: onChanged,
       title: Text(
         label,
-        style: R.styles.normalFont.copyWith(
-          color: theme.colorScheme.onBackground,
-        ),
+        // style: R.styles.normalFont.copyWith(
+        //   color: theme.colorScheme.onBackground,
+        // ),
       ),
     );
   }

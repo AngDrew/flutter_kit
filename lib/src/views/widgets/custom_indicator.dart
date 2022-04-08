@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomIndicator extends StatelessWidget {
-  const CustomIndicator();
+  const CustomIndicator({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);

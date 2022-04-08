@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-
 class CircleContainer extends StatelessWidget {
   const CircleContainer({
+    Key? key,
     required this.child,
     required this.radius,
-  });
+  }) : super(key: key);
+
   final Widget child;
   final double radius;
 

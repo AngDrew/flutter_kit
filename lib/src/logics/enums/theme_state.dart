@@ -1,1 +1,0 @@
-enum ThemeState { light, dark }
